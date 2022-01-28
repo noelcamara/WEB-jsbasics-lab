@@ -260,10 +260,44 @@ describe('JS Basics Tests', () => {
    * Voir la documentation des [fonctions Mock](https://jestjs.io/docs/en/mock-functions.html) de Jest.
    *
    */
-  describe('Test echantillon', () => {
-    // TODO
-  });
+   describe('Test echantillon', () => {
+    const myMock = jest.fn();
 
+    myMock.mockReturnValueOnce(0.5613561)
+        .mockReturnValueOnce(0.0123146)
+        .mockReturnValue(0.946)
+        .mockReturnValue(0.87463);
+
+    test("Retourne le troisième élement du tableu", () => {
+      Math.random = myMock;
+      expect(echantillon([1,2,3,4,5])).toEqual(3);
+    });
+
+
+    test("Retourne le premier élément du tableau", () => {
+      Math.random = myMock;
+      expect(echantillon(["noel",true,1,2])).toEqual("noel");
+    });
+
+    test("Retourne le dernier élement du tableau",() => {
+      Math.random = myMock;
+      expect(echantillon([true,{nom : "noel"},false,{code:10}])).toEqual({code:10});
+    });
+
+
+    test("Tableau vide",() => {
+      Math.random = myMock;
+      expect(echantillon([])).toEqual(undefined);
+
+    });
+
+    test("Tableau avec un seul élement",() => {
+      Math.random = myMock;
+      expect(echantillon([1])).toEqual(1);
+
+    });
+
+  });
   /**
    * Tester la fonction `enumerer`.
    *
