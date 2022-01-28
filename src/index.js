@@ -144,9 +144,20 @@ export const retireDe = (tab, ...elms) => {
  * // [5, 4, 3, 2, 1, 0]
  */
 export const aplatirRecursif = tab => {
-  //TODO
-};
 
+    let tabAplatir = [];
+
+    for (let ele of tab) {
+        if (Array.isArray(ele)) {
+            tabAplatir = tabAplatir.concat(aplatirRecursif(ele));
+        }
+        else
+        {tabAplatir = tabAplatir.concat(ele);}
+    }
+
+    return tabAplatir;
+
+};
 /**
  * Retourne la liste de toutes les permutations des objets du tableau passé en paramètre.
  *
