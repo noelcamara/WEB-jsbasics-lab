@@ -360,7 +360,42 @@ describe('JS Basics Tests', () => {
    * nMax(['1', '2', '3'], 2); // []
    *
    */
-  describe('Test nMax', () => {
-    // TODO
+   describe('Test nMax', () => {
+    test("Tableau vide",() => {
+      expect(nMax([])).toEqual([]);
+    });
+
+    test("Tableau avec un élement string",() => {
+      expect(nMax(['3'])).toEqual([]);
+    });
+    test("Tableau d'entier avec un seul élement",() => {
+      expect(nMax([3])).toEqual([3]);
+    });
+
+
+    test("Tableau d'entier avec n = 1",() => {
+      expect(nMax([1,2,3])).toEqual([3]);
+    });
+
+    test("Tableau d'entier avec n = 2",() => {
+      expect(nMax([1,2,3],2)).toEqual([3,2]);
+    });
+
+
+    test("Tableau d'entier avec n = 20",() => {
+      expect(nMax([1,2,3],20)).toEqual([1,2,3]);
+    });
+
+
+
+    test("Tableau de types différents n = 2",() => {
+      expect(nMax(['1','2',3],2)).toEqual([3]);
+    });
+
+
+    test("Tableau qui contient aucun entier avec n = 2",() => {
+      expect(nMax(['1','2','3'],2)).toEqual([]);
+    });
+
   });
 });
