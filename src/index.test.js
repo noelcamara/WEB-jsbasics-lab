@@ -8,6 +8,9 @@ import {
   retireDe,
   aplatirRecursif,
   permutations,
+   echantillon,
+  enumerer,
+  nMax,
 } from '../src';
 
 describe('JS Basics Tests', () => {
@@ -204,8 +207,48 @@ describe('JS Basics Tests', () => {
    * //   [ 2, 1, 0 ] ]
    *
    */
-  describe('Test permutations', () => {
-    // TODO
+   describe('Test permutations', () => {
+    test('table vide',() => {
+      expect(permutations([])).toEqual([]);
+    });
+
+    test('table avec un seul élement',() => {
+      const monTab = ["noel"];
+      const attendu = ["noel"];
+      expect(permutations(monTab)).toEqual(attendu);
+    });
+
+    test('table avec deux élements',() => {
+      const monTab = ["noel",1];
+      const attendu = [
+        ["noel",1],
+        [1,"noel"]
+      ];
+      expect(permutations(monTab)).toEqual(attendu);
+    });
+
+    test('table avec trois élements',() => {
+      const monTab = [0,1,2];
+      const attendu =[ [ 0, 1, 2 ],
+        [ 0, 2, 1 ],
+        [ 1, 0, 2 ],
+        [ 1, 2, 0 ],
+        [ 2, 0, 1 ],
+        [ 2, 1, 0 ] ];
+      expect(permutations(monTab)).toEqual(attendu);
+    });
+
+    test('table avec trois élements de diffétents type',() => {
+      const monTab = [1,"noel",true];
+      const attendu =[ [1,"noel",true],
+        [1,true,"noel"],
+        ["noel",1,true],
+        ["noel",true, 1],
+        [true, 1,"noel"],
+        [true,"noel",1]];
+      expect(permutations(monTab)).toEqual(attendu);
+    });
+
   });
 
   /**
