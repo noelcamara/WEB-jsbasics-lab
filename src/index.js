@@ -14,7 +14,16 @@ export const isNumberEven = i => {
  * @param {String} str
  */
 export const getFileExtension = str => {
-  // TODO
+    let lastIndex = str.lastIndexOf(".");
+
+    if (lastIndex > 0 && lastIndex < str.length - 1) {
+
+        return str.substring(lastIndex + 1);
+
+    }
+    else
+    {return false;}
+
 };
 
 /**
