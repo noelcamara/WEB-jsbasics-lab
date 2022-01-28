@@ -310,8 +310,39 @@ describe('JS Basics Tests', () => {
    *
    * Attention aux cas particuliers (tableaux à 0, 1 ou 2 éléments.)
    */
-  describe('Test enumerer', () => {
-    // TODO
+   describe('Test enumerer', () => {
+    test("tableau vide",() => {
+
+      expect(enumerer([])).toEqual(undefined);
+
+    });
+
+    test("tableau avec un seul élement",() => {
+
+      expect(enumerer(["noel"])).toEqual("noel");
+
+    });
+
+
+    test("tableau avec deux  élements",() => {
+
+      expect(enumerer(["noel","paul"],", "," et ")).toEqual("noel et paul");
+
+    });
+
+
+    test("tableau avec 3 élements",() => {
+
+      expect(enumerer(["noel","paul",10],", "," et ")).toEqual("noel, paul et 10");
+
+    });
+
+    test("tableau avec 5 élements",() => {
+
+      expect(enumerer(["noel","paul",10,2022,"Le Havre"],", "," et ")).toEqual("noel, paul, 10, 2022 et Le Havre");
+
+    });
+
   });
 
   /**
