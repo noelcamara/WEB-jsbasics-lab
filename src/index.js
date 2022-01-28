@@ -243,5 +243,15 @@ export const enumerer = (tab, separateur = ', ', fin = separateur) => {
  * Utiliser `Array.prototype.sort()`, l'opérateur de destructuration (...) et `Array.prototype.slice()`
  */
 export const nMax = (tab, n = 1) => {
-  //TODO
+    let number = tab.filter(t => typeof t === 'number');
+
+    if(n >= tab.length){
+        return number;
+    }
+
+    else{
+
+        return number.sort( (a,b) => a - b ).reverse().slice(0,n);
+
+    }
 };
