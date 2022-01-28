@@ -80,8 +80,23 @@ export const isPalindrome = str => {
  * Return the sum all the numbers you find, anywhere in the nest of arrays.
  */
 export const nestedSum = arr => {
-  // TODO
+    return arr.reduce((accum, current) => {
+            if (typeof current === 'number') {
+                return accum + current;
+            }
+            else if (Array.isArray(current)) {
+
+                return accum + nestedSum(current);
+            }
+            else
+            {return accum;}
+
+
+        }, 0
+
+    );
 };
+
 
 /**
  * Retire du tableau `tab` passé en paramètre les éléments passés en
