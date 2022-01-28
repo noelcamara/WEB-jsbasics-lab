@@ -117,9 +117,21 @@ export const nestedSum = arr => {
  * @param  {objects} elms
  */
 export const retireDe = (tab, ...elms) => {
-  // TODO
-};
+    for (let ele of elms) {
 
+        let indexOfElement = tab.indexOf(ele);
+
+        while (indexOfElement !== -1) {
+
+            tab.splice(indexOfElement, 1);
+            indexOfElement = tab.indexOf(ele);
+
+        }
+
+    }
+
+    return tab;
+};
 /**
  * Aplatit en profondeur un tableau passé en paramètre.
  *
