@@ -210,7 +210,29 @@ export const echantillon = tab => tab[Math.floor(Math.random() * tab.length)];
  * @param {string} fin
  */
 export const enumerer = (tab, separateur = ', ', fin = separateur) => {
-  // TODO
+    if(tab.length === 0){
+        return undefined;
+    }
+
+
+    else{
+        return tab.reduce((accum,current) => {
+
+            if(tab.indexOf(current) === tab.length-1) {
+
+                return accum.concat(fin,current);
+
+            }
+            else{
+
+                return accum.concat(separateur,current);
+
+            }
+
+        });
+
+    }
+
 };
 
 /**
