@@ -69,7 +69,10 @@ export const reverseString = str => {
  * @param {String} str
  */
 export const isPalindrome = str => {
-  // TODO
+    let newValue = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    return newValue.split("").reverse().join("") === newValue;
+
 };
 
 /**
