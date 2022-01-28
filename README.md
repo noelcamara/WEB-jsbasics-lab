@@ -8,7 +8,7 @@
 
 |Nom|Prénom|login|email|
 |--|--|--|--|
-| *Nom auteur* | *Prénom auteur*| *login auteur* | *email auteur* |
+| *Camara* | *Noel*| *cn196097* | *noel.camara@etu.univ-lehavre.fr* |
 
 ## Travail à réaliser
 
